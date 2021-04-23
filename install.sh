@@ -52,4 +52,3 @@ echo '}' >>coder.json;
 #开启权限
 chown -R ${USER_NAME} /root/.local
 echo 玩的开心！Have Fun!
-code-server
