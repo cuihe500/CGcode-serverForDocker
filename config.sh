@@ -14,4 +14,4 @@ echo auth: password >> config.yaml;
 echo "password: "${CS_PASSWORD} >> config.yaml;
 fi
 echo cert: false >> config.yaml;
-code-server
+systemctl enable --now code-server@$USER
