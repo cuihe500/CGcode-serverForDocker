@@ -2,16 +2,6 @@
 #一键部署脚本v0.3(Use to Docker) Created By Cuichanghe
 path=$(pwd);
 pathto="/usr/CGcode-server";
-echo 请输入用户名:
-read USER_NAME
-echo 请输入用户的端口号:
-read USER_PORT
-echo 请输入code-server登录密码（留空则为无）:
-read CS_PASSWORD
-if [[ -z "$USER_PORT" ] || [ -z "$USER_NAME" ]]; then
-echo "参数有误！请检查参数是否正确?"
-exit
-fi
 echo 三秒后将会自动部署CGCode-server... 按下Ctrl+C终止执行
 echo ----------------------3----------------------
 sleep 1
@@ -31,22 +21,11 @@ copy(){
 copy
 echo "开始安装code-server"
 ${path}/code-server/install.sh
-chmod -R +775 ${path}/model
+chmod -R +775 /usr/CGcode-server/model/
 #复制基础文件和插件
 cp -r /usr/CGcode-server/model/. /root
 #新建并写入配置文件
 cd /root/.config/code-server
-echo bind-addr: 0.0.0.0:${USER_PORT}>config.yaml;
-if [ -z "$CS_PASSWORD" ]; then
-echo 检测到无code-server登录密码
-echo auth: none >> config.yaml;
-echo password: >> config.yaml;
-else
-echo 检测到有code-server登录密码
-echo auth: password >> config.yaml;
-echo "password: "${CS_PASSWORD} >> config.yaml;
-fi
-echo cert: false >> config.yaml;
 #更改权限
 chmod -R +775 /root/.local
 #创建用户自己的工作目录
@@ -62,8 +41,8 @@ cd /root/.local/share/code-server
 echo '{' >coder.json;
 echo   '"query": {},' >>coder.json;
 echo    '"update": {' >>coder.json;
-echo     '"checked": 1617527558674,' >>coder.json;
-echo     '"version": "3.9.2"' >>coder.json;
+echo     '"checked": ,' >>coder.json;
+echo     '"version": ""' >>coder.json;
 echo '  },' >>coder.json;
 echo  ' "lastVisited": {' >>coder.json;
 echo     '"url": "/root/WorkPlaceFor'${USER_NAME}'",' >>coder.json;
