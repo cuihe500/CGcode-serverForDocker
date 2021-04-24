@@ -28,13 +28,14 @@ cd /root/.config/code-server
 chmod -R +775 /root/.local
 #创建用户自己的工作目录
 cd /root
-mkdir WorkPlaceFor${USER_NAME}
+mkdir WorkPlace
 #更改所属用户
-chown -R root /root/WorkPlaceFor${USER_NAME}
+chown -R root /root/WorkPlace
 #复制说明和测试文件
-cp  /usr/CGcode-server/model/ReadMe.md /root/WorkPlaceFor${USER_NAME}
-cp  /usr/CGcode-server/model/Welcome.cpp /root/WorkPlaceFor${USER_NAME}
+cp  /usr/CGcode-server/model/ReadMe.md /root/WorkPlace
+cp  /usr/CGcode-server/model/Welcome.cpp /root/WorkPlace
 #新建并写入初始页面配置文件
+mkdir /root/.local/share/code-server
 cd /root/.local/share/code-server
 echo '{' >coder.json;
 echo   '"query": {},' >>coder.json;
@@ -43,10 +44,9 @@ echo     '"checked": ,' >>coder.json;
 echo     '"version": ""' >>coder.json;
 echo '  },' >>coder.json;
 echo  ' "lastVisited": {' >>coder.json;
-echo     '"url": "/root/WorkPlaceFor'${USER_NAME}'",' >>coder.json;
+echo     '"url": "/root/WorkPlaceFor",' >>coder.json;
 echo     '"workspace": false' >>coder.json;
 echo  ' }' >>coder.json;
 echo '}' >>coder.json;
-#开启权限
-chown -R ${USER_NAME} /root/.local
+
 echo 玩的开心！Have Fun!
