@@ -32,13 +32,13 @@ mkdir /root/.local/share/code-server
 cd /root/.local/share/code-server
 echo '{' >coder.json;
 echo   '"query": {' >>coder.json;
-echo  '"folder": "/root/WorkPlaceFor"},' >>coder.json;
+echo  '"folder": "/root/WorkPlace"},' >>coder.json;
 echo    '"update": {' >>coder.json;
 echo     '"checked": 1620541315203,' >>coder.json;
 echo     '"version": "3.9.3"' >>coder.json;
 echo '  },' >>coder.json;
 echo  ' "lastVisited": {' >>coder.json;
-echo     '"url": "/root/WorkPlaceFor",' >>coder.json;
+echo     '"url": "/root/WorkPlace",' >>coder.json;
 echo     '"workspace": false' >>coder.json;
 echo  ' }' >>coder.json;
 echo '}' >>coder.json;
