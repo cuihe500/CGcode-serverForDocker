@@ -2,13 +2,6 @@
 #一键部署脚本v0.3(Use to Docker) Created By Cuichanghe
 path=$(pwd);
 pathto="/usr/CGcode-server";
-echo 三秒后将会自动部署CGCode-server... 按下Ctrl+C终止执行
-echo ----------------------3----------------------
-sleep 1
-echo ----------------------2----------------------
-sleep 1
-echo ----------------------1----------------------
-sleep 1
 echo 开始执行脚本
 copy(){
     mkdir /usr/CGcode-server
@@ -38,10 +31,11 @@ cp  /usr/CGcode-server/model/Welcome.cpp /root/WorkPlace
 mkdir /root/.local/share/code-server
 cd /root/.local/share/code-server
 echo '{' >coder.json;
-echo   '"query": {},' >>coder.json;
+echo   '"query": {' >>coder.json;
+echo  '"folder": "/root/WorkPlaceFor"},' >>coder.json;
 echo    '"update": {' >>coder.json;
-echo     '"checked": ,' >>coder.json;
-echo     '"version": ""' >>coder.json;
+echo     '"checked": 1620541315203,' >>coder.json;
+echo     '"version": "3.9.3"' >>coder.json;
 echo '  },' >>coder.json;
 echo  ' "lastVisited": {' >>coder.json;
 echo     '"url": "/root/WorkPlaceFor",' >>coder.json;
