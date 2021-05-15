@@ -35,7 +35,7 @@ echo   '"query": {' >>coder.json;
 echo  '"folder": "/root/WorkPlace"},' >>coder.json;
 echo    '"update": {' >>coder.json;
 echo     '"checked": 1620541315203,' >>coder.json;
-echo     '"version": "3.9.3"' >>coder.json;
+echo     '"version": "3.9.10"' >>coder.json;
 echo '  },' >>coder.json;
 echo  ' "lastVisited": {' >>coder.json;
 echo     '"url": "/root/WorkPlace",' >>coder.json;
