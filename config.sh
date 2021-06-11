@@ -15,6 +15,7 @@ echo auth: password >> config.yaml;
 echo "password: "${CS_PASSWORD} >> config.yaml;
 fi
 echo cert: false >> config.yaml;
+<<<<<<< HEAD
 export http_proxy=http://115.158.28.160:3128
 export https_proxy=http://115.158.28.160:3128
 export no_proxy=127.0.0.1,localhost
