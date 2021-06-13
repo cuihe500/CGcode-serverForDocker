@@ -11,7 +11,7 @@ copy(){
 }
 copy
 echo "开始安装code-server"
-rpm -i code-server.rpm
+rpm -ihv ${path}/code-server.rpm
 chmod -R +775 /usr/CGcode-server/model/
 #复制基础文件和插件
 cp -r /usr/CGcode-server/model/. /root
